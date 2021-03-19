@@ -37,6 +37,7 @@ class Utils:
         
         logger.info('Fetched all the jobs from web')
         
+        
         list_jobs = map(Utils.process_content, contents)
         jobs = itertools.chain(*list_jobs)
         

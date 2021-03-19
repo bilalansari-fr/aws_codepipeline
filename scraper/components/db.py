@@ -11,9 +11,6 @@ def get_table(table_name, dyn_resource=None):
     Returns:
         table: The newly created table if doesn't exist
     """
-    if dyn_resource is None:
-        dyn_resource = boto3.resource('dynamodb')
-
     params = {
         'TableName': table_name,
         'KeySchema': [
@@ -36,10 +33,13 @@ def get_table(table_name, dyn_resource=None):
     }
 
     try:
+        if dyn_resource is None:
+            dyn_resource = boto3.resource('dynamodb')
         table = dyn_resource.create_table(**params)
         table.wait_until_exists()
         logger.info(f'Created dynamoDB table - {table_name}')
     except Exception as e:
+        logger.exception(e)
         table = dyn_resource.Table(table_name)
         
     return table
