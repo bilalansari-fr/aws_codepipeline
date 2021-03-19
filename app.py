@@ -14,7 +14,8 @@ def handler(event, context):
 
 
 # event = {
-#     'url': 'https://www.monster.com',
-#     'queries':  [{'keyword':'Data Science', 'location':'New YOrk'}, {'te':90}]
+# "url": "https://www.monster.com",
+# "queries":  [{"keyword":"Data Science", "location":"New YOrk"}]
 # }
+
 # handler(event, 2)
