@@ -1,17 +1,16 @@
-from scraper import Scraper
+# from scraper import Scraper
 
 
-def handler(event, context):
-    """ """
-    base_url = event['url']
-    queries = event['queries']
+# def handler(event, context):
+#     """ """
+#     base_url = event['url']
+#     queries = event['queries']
     
-    scraper = Scraper(base_url)
-    response = scraper.start(queries)
+#     scraper = Scraper(base_url)
+#     response = scraper.start(queries)
 
-    return response
+#     return response
     
-
 
 # event = \
 # {
@@ -20,3 +19,12 @@ def handler(event, context):
 # }
 
 # handler(event, 2)
+
+
+import json
+def handler(event, context):
+    response = {
+        "statusCode": 200,
+        "body": json.dumps({'message':'Successfully scraped.'})
+    }
+    return response
