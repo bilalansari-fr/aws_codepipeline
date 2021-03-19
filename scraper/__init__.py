@@ -18,8 +18,18 @@ logger.addHandler(streamhandler)
 class Scraper:
     
     def __init__(self, base_url):
+        
+        
+        logger.info('Scraper Object Start.....')
+        
         self.base_url = base_url
+        
+        logger.info('gettable method Created.....')
+        
         self.table = get_table('JobTable')
+        
+        logger.info('Scraper Object Created.....')
+        
     
     def start(self, queries, **kwargs):
         """Start Scraping the website"""
