@@ -13,7 +13,8 @@ def handler(event, context):
     
 
 
-# event = {
+# event = \
+# {
 # "url": "https://www.monster.com",
 # "queries":  [{"keyword":"Data Science", "location":"New YOrk"}]
 # }

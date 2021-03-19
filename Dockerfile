@@ -2,8 +2,9 @@ FROM public.ecr.aws/lambda/python:3.8
 
 RUN yum install -y python3 python3-pip
 
-COPY . /tmp/scraper/
-WORKDIR /tmp/scraper
+WORKDIR /scraper
+
+COPY . .
 
 RUN pip install pipenv
 RUN pipenv lock --keep-outdated --requirements > requirements.txt
