@@ -1,0 +1,20 @@
+from scraper import Scraper
+
+
+def handler(event, context):
+    """ """
+    base_url = event['url']
+    queries = event['queries']
+    
+    scraper = Scraper(base_url)
+    response = scraper.start(queries)
+
+    return response
+    
+
+
+# event = {
+#     'url': 'https://www.monster.com',
+#     'queries':  [{'keyword':'Data Science', 'location':'New YOrk'}, {'te':90}]
+# }
+# handler(event, 2)
