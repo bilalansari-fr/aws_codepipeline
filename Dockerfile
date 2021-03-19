@@ -7,7 +7,7 @@ WORKDIR /tmp/scraper
 
 RUN pip install pipenv
 RUN pipenv lock --keep-outdated --requirements > requirements.txt
-RUN pip install -r /tmp/requirements.txt
+RUN pip install -r requirements.txt
 
 # You can overwrite command in `serverless.yml` template
 CMD ["app.handler"]
