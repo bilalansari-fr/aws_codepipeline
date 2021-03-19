@@ -1,22 +1,22 @@
-# FROM public.ecr.aws/lambda/python:3.8
+FROM public.ecr.aws/lambda/python:3.8
 
-# RUN yum install -y python3 python3-pip
+RUN yum install -y python3 python3-pip
 
 # WORKDIR /scraper
 
-# COPY . ./
+COPY . ./
 
-# RUN pip install pipenv
-# RUN pipenv lock --keep-outdated --requirements > requirements.txt
-# RUN pip install -r requirements.txt
+RUN pip install pipenv
+RUN pipenv lock --keep-outdated --requirements > requirements.txt
+RUN pip install -r requirements.txt
 
-# # You can overwrite command in `serverless.yml` template
-# CMD ["app.handler"]
-
-
+# You can overwrite command in `serverless.yml` template
+CMD ["app.handler"]
 
 
-FROM public.ecr.aws/lambda/python:3.8
 
-COPY app.py   ./
-CMD ["app.handler"]      
+
+# FROM public.ecr.aws/lambda/python:3.8
+
+# COPY app.py   ./
+# CMD ["app.handler"]      
