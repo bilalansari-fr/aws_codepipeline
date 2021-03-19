@@ -37,10 +37,13 @@ class Utils:
         
         logger.info('Fetched all the jobs from web')
         
-        # CPU bound
-        with ProcessPoolExecutor() as executor:
-            list_jobs = executor.map(Utils.process_content, contents)
-            jobs = itertools.chain(*list_jobs)
+        list_jobs = map(Utils.process_content, contents)
+        jobs = itertools.chain(*list_jobs)
+        
+        # # CPU bound
+        # with ProcessPoolExecutor() as executor:
+        #     list_jobs = executor.map(Utils.process_content, contents)
+        #     jobs = itertools.chain(*list_jobs)
         
         logger.info('Processed all the fetched jobs')
         

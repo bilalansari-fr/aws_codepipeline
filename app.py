@@ -12,13 +12,13 @@ def handler(event, context):
     return response
     
 
-# event = \
-# {
-# "url": "https://www.monster.com",
-# "queries":  [{"keyword":"Data Science", "location":"New YOrk"}]
-# }
+event = \
+{
+"url": "https://www.monster.com",
+"queries":  [{"keyword":"Data Science", "location":"New YOrk"}]
+}
 
-# handler(event, 2)
+handler(event, 2)
 
 
 # import json
